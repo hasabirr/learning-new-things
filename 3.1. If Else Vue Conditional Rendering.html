@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <span v-if="tampil">
+            {{ message }}
+        </span>
+        <span v-else>
+            message tidak ditampilkan
+        </span>
+        
+        <div v-if="nilai >= 8">
+            predikat A
+        </div>
+        <div v-else-if="nilai <8 && nilai > 6">
+            predikat B
+        </div>
+        <div v-else>
+            predikat C
+        </div>
+    </div>
+
+    <!-- wajib disertakan type module kalo pake ES module -->
+    <script>
+        const { createApp } = Vue
+        createApp({
+            data() {
+                return {
+                    message: 'Hello World!',
+                    tampil: true,
+                    nilai: 7
+                }
+            }, 
+        }).mount('#app')
+    </script>
+</body>
+</html>

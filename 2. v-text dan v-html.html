@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>
+            {{ count }}
+        </div>
+        <!-- directive v-text: akan mereplace semua text yang ada di div -->
+        <div v-text="message"></div> 
+
+        <div v-html="message2"></div>
+    </div>
+
+    <!-- wajib disertakan type module kalo pake ES module -->
+    <script>
+        const { createApp } = Vue
+        createApp({
+            data() {
+                return {
+                    count : 0,
+                    message: 'Hello World!',
+                    message2: '<strong>Ini tulisan bold</strong>'
+                }
+            }, 
+            <!-- reactivity sederhana -->
+            methods: {
+                tambah() {
+                    this.count++
+                },
+                kurang() {
+                    this.count--
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>

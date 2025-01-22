@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>User</h2>
+        <div>
+            name : {{user.name}}
+        </div>
+        <div>
+            <img :src="user.image" alt="" style="width:200px">
+        </div>
+    </div>
+
+    <!-- wajib disertakan type module kalo pake ES module -->
+    <script>
+        const { createApp } = Vue
+        createApp({
+            data() {
+                return {
+                    user: {
+                        name: 'Rafif',
+                        image: 'https://images.unsplash.com/photo-1645541721430-c0273a0c086a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRhbmllbCUyMHJhZGNsaWZmfGVufDB8fDB8fHww'
+                    }
+                }
+            }, 
+            methods: {
+                
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>

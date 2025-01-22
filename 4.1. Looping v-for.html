@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <!-- bedanya v-if dan v-show apa? -->
+    <!-- v-show cara kerjanya hanya memberi state display:none, jadi kalo di inspect akan akan keliatan bahwa htmlnya tu ada cuman di hidden aja -->
+    <!-- kalo v-if beneran gakeliatan kalo di inspect -->
+    <div id="app">
+        <div v-for="angka in 10">
+            {{ angka }}
+        </div>
+
+        <ul v-for="angka in 10">
+            <li>{{angka}}</li>
+        </ul>
+    </div>
+
+    <!-- wajib disertakan type module kalo pake ES module -->
+    <script>
+        const { createApp } = Vue
+        createApp({
+            data() {
+                return {
+                    stateLampu: true
+                }
+            }, 
+            methods: {
+                toggleLampu() {
+                    this.stateLampu = !this.stateLampu
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>

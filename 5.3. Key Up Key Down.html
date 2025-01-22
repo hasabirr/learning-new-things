@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="kurang">-</button>
+        <span>{{count}}</span>
+        <button @click="tambah">+</button>
+        <br>
+        <button @click="sayHello('whatsupp')">Say It</button>
+        <br>
+        <!-- kalo user klik suatu key di keyboard maka apa yang akan di tampilkan? atau responnya bakal kek mana -->
+        <input type="text" @keydown.enter="sayHello('whatsupp')">
+    </div>
+
+    <!-- wajib disertakan type module kalo pake ES module -->
+    <script>
+        const { createApp } = Vue
+        createApp({
+            data() {
+                return {
+                    count: 0
+                }
+            }, 
+            methods: {
+                kurang() {
+                    this.count--
+                },
+                tambah() {
+                    this.count++
+                },
+                sayHello(param) {
+                    alert('hallo ' + param)
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>

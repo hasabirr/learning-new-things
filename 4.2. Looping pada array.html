@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul v-for="whatever in fruits">
+            <li>{{whatever}} {{index}} <button @click="hapus(index)">x</button></li>
+        </ul>
+
+    </div>
+
+    <!-- wajib disertakan type module kalo pake ES module -->
+    <script>
+        const { createApp } = Vue
+        createApp({
+            data() {
+                return {
+                    fruits: ['apel','melon','pepaya']
+                }
+            }, 
+            methods: {
+                hapus(index) {
+                    this.fruits.splice(index, 1)
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
