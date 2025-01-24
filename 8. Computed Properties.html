@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <form action="">
+            <input type="text" placeholder="first name" v-model="firstName"><br>
+            <input type="text" placeholder="middle name" v-model="middleName"><br>
+            <input type="text" placeholder="last name" v-model="lastName">
+        </form>
+    </div>
+
+    <div>
+        Full Name : {{fullName}}
+    </div>
+    <!-- wajib disertakan type module kalo pake ES module -->
+    <script>
+        const { createApp } = Vue
+        createApp({
+            data() {
+                return {
+                    firstName:'',
+                    middleName:'',
+                    lastName:'',
+                }
+            }, 
+            computed: {
+                fullName() {
+                    return this.firstName+this.middleName+this.lastName
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>

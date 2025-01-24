@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<style>
+    .textbiru {
+        color: blue;
+    }
+</style>
+<body>
+    <div id="app">
+        <div>
+            <input type="text" placeholder="Username" v-model="username">
+            <br>
+            <label for="">Address : </label>
+            <br>
+            <textarea name="" id="" cols="30" rows="10" v-model="address"></textarea>
+        </div>
+
+        <div>
+            <label for="">Hobi</label>
+            <br>
+            <label for="">Musik</label>
+            <input type="checkbox" value="Musik" v-model="hobbies">
+            <br>
+            <label for="">Olahraga</label>
+            <input type="checkbox" value="Olahraga" v-model="hobbies">
+            <br>
+            <label for="">Jalan</label>
+            <input type="checkbox" value="Jalan" v-model="hobbies">
+        </div>
+
+        <div>
+            <p>
+                Username : {{username}}
+            </p>
+
+            <p>
+                Address : {{address}}
+            </p>
+
+            <p>
+                Hobi : 
+                <span v-if="hobbies.length > 0">
+                    <ul v-for="hobi in hobbies">
+                        {{hobi}}
+                    </ul>
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <!-- wajib disertakan type module kalo pake ES module -->
+    <script>
+        const { createApp } = Vue
+        createApp({
+            data() {
+                return {
+                    username: '',
+                    address: '',
+                    hobbies: []
+                }
+            }, 
+            methods: {
+                
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>

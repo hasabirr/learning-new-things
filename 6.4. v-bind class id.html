@@ -6,10 +6,15 @@
     <title>Index</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
+<style>
+    .textbiru {
+        color: blue;
+    }
+</style>
 <body>
     <div id="app">
         <h2>User</h2>
-        <div>
+        <div :class="selectedClass">
             name : {{user.name}}
         </div>
         <div>
@@ -27,7 +32,8 @@
                         name: 'Rafif',
                         image: 'https://images.unsplash.com/photo-1645541721430-c0273a0c086a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGRhbmllbCUyMHJhZGNsaWZmfGVufDB8fDB8fHww'
                     },
-                    responsiveWidth: '400px' // tergantung ukuran layar, based on calculation
+                    responsiveWidth: '400px', // tergantung ukuran layar, based on calculation
+                    selectedClass: 'textbiru'
                 }
             }, 
             methods: {

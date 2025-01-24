@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<style>
+    .textbiru {
+        color: blue;
+    }
+</style>
+<body>
+    <div id="app">
+        <div>
+            
+            <input type="text" placeholder="Username" v-model="username">
+            <br>
+            <label for="">Address : </label>
+            <br>
+            <textarea name="" id="" cols="30" rows="10" v-model="address"></textarea>
+        </div>
+
+        <div>
+            <label for="">Gender</label>
+            <br>
+            <input type="radio" value="Pria" v-model="gender">Pria
+        </div>
+
+        <div>
+            <p>
+                Username : {{username}}
+            </p>
+
+            <p>
+                Address : {{address}}
+            </p>
+
+            <p>
+                Gender : {{gender}}
+            </p>
+        </div>
+    </div>
+
+    <!-- wajib disertakan type module kalo pake ES module -->
+    <script>
+        const { createApp } = Vue
+        createApp({
+            data() {
+                return {
+                    username: '',
+                    address:'',
+                    gender:''
+                }
+            }, 
+            methods: {
+                
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
