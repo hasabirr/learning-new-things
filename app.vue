@@ -1,17 +1,20 @@
 <script lang="ts" setup>
+const show = ref(false)
 
-  import { AppLayoutFooter } from '#components'
-  const Header = resolveComponent('AppLayoutHeader')
-
+const onClick = () => {
+  show.value = true
+}
 </script>
+
 
 <template>
   <div>
-    <component :is="Header"/>
+    <LazyAppLayoutHeader v-if="show"/>
+    <button @click="onClick">Show Header</button>
     <div>
-      <p>kontenn</p>
+      <p>Kontennya</p>
       <UiButton/>
     </div>
-    <AppLayoutFooter/>
+    <LazyAppLayoutFooter/>
   </div>
 </template>
