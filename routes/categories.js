@@ -8,7 +8,7 @@ const {
   destroyCategory,
 } = require("../controllers/categoryController"); // import controller categoriesController
 
-// FindAll Data
+// FindAll Data ya
 router.get("/", getAllCategories);
 
 // Detail Data

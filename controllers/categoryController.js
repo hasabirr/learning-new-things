@@ -1,5 +1,5 @@
 const { Category } = require("../models");
-
+// part of
 exports.getAllCategories = async (req, res) => {
   try {
     const categories = await Category.findAll();

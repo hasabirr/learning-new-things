@@ -1,5 +1,6 @@
 require("dotenv").config();
 module.exports = {
+  // This file is used to configure the database connection for different environments
   development: {
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,

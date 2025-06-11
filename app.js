@@ -26,4 +26,4 @@ const port = process.env.PORT; // ambil port dari environment variable atau guna
 app.listen(port, () => {
   // jalankan server pada port 3000
   console.log(`Server is running at http://localhost:${port}`); // tampilkan pesan jika server berhasil dijalankan
-}); // jalankan server pada port 3000
+}); // jalankan server pada port 3000 ya
