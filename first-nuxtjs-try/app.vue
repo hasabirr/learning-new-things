@@ -1,20 +1,19 @@
 <script lang="ts" setup>
-const show = ref(false)
+const show = ref(false);
 
 const onClick = () => {
-  show.value = true
-}
+  show.value = true;
+};
 </script>
-
 
 <template>
   <div>
-    <LazyAppLayoutHeader v-if="show"/>
+    <LazyAppLayoutHeader v-if="show" />
     <button @click="onClick">Show Header</button>
     <div>
-      <p>Kontennya</p>
-      <UiButton/>
+      <p>Kontennyaaa</p>
+      <UiButton />
     </div>
-    <LazyAppLayoutFooter/>
+    <LazyAppLayoutFooter />
   </div>
 </template>
